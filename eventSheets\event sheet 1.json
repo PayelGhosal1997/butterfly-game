@@ -1,0 +1,923 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "prevX",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 767447706889550
+		},
+		{
+			"eventType": "variable",
+			"name": "prevY",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 556037797923002
+		},
+		{
+			"eventType": "variable",
+			"name": "rand_no1",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 251704876264731
+		},
+		{
+			"eventType": "variable",
+			"name": "rand_no2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 457626967989611
+		},
+		{
+			"eventType": "variable",
+			"name": "rand_no3",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 836668694769868
+		},
+		{
+			"eventType": "variable",
+			"name": "sound_counter",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 992242194702785
+		},
+		{
+			"eventType": "variable",
+			"name": "move_end",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 828723902237313
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 470060896871409
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 639132612131439,
+					"parameters": {
+						"variable": "rand_no1",
+						"value": "int(random(1,100))"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 390336346753906,
+					"parameters": {
+						"variable": "rand_no2",
+						"value": "int(random(1,100))"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 232057037373693,
+					"parameters": {
+						"variable": "rand_no3",
+						"value": "int(random(1,100))"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 523344759731975,
+					"parameters": {
+						"variable": "sound_counter",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 666624502948171,
+					"parameters": {
+						"variable": "move_end",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text1",
+					"sid": 785154421961843,
+					"parameters": {
+						"text": "rand_no1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text2",
+					"sid": 239561168572216,
+					"parameters": {
+						"text": "rand_no2"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text3",
+					"sid": 355521637651357,
+					"parameters": {
+						"text": "rand_no3"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Text4",
+					"sid": 198909650001488,
+					"parameters": {
+						"text": "choose(rand_no1,rand_no2,rand_no3)"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "butterfly",
+					"sid": 216043916822845,
+					"parameters": {
+						"x": "805",
+						"y": "67"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 835997378932660,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 190655884212309,
+					"parameters": {
+						"audio-file": "can you take the butterfly to the number ",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 670430067613871,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 926929438562937,
+							"parameters": {
+								"first-value": "rand_no1",
+								"comparison": 0,
+								"second-value": "rand_no2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 632980360417634
+						}
+					],
+					"sid": 298719509570803
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 786969979252545,
+							"parameters": {
+								"first-value": "rand_no3",
+								"comparison": 0,
+								"second-value": "rand_no1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 853614419356269
+						}
+					],
+					"sid": 823650817111543
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 147350080860074,
+							"parameters": {
+								"first-value": "rand_no2",
+								"comparison": 0,
+								"second-value": "rand_no3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 844129109647042
+						}
+					],
+					"sid": 395516026825753
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-start",
+					"objectClass": "Touch",
+					"sid": 296154441931933
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 130316274939707,
+					"parameters": {
+						"variable": "prevX",
+						"value": "Touch.X"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 796844993442048,
+					"parameters": {
+						"variable": "prevY",
+						"value": "Touch.Y"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "Line",
+					"sid": 432292702520807
+				},
+				{
+					"id": "stop",
+					"objectClass": "butterfly",
+					"sid": 819505702068385,
+					"behaviorType": "MoveTo"
+				}
+			],
+			"sid": 893276719324115
+		},
+		{
+			"eventType": "comment",
+			"text": "To avoid creating too many lines, check if the finger moved more than 8px"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-in-touch",
+					"objectClass": "Touch",
+					"sid": 478098497727269
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 132331366327925,
+					"parameters": {
+						"first-value": "distance(Touch.X, Touch.Y, prevX, prevY)",
+						"comparison": 4,
+						"second-value": "8"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "create-object",
+					"objectClass": "System",
+					"sid": 470250873419469,
+					"parameters": {
+						"object-to-create": "Line",
+						"layer": "0",
+						"x": "Touch.X",
+						"y": "Touch.Y",
+						"create-hierarchy": false
+					}
+				},
+				{
+					"id": "set-angle-toward-position",
+					"objectClass": "Line",
+					"sid": 842894839215283,
+					"parameters": {
+						"x": "prevX",
+						"y": "prevY"
+					}
+				},
+				{
+					"id": "set-width",
+					"objectClass": "Line",
+					"sid": 883307844135721,
+					"parameters": {
+						"width": "distance(Self.X, Self.Y, prevX, prevY)"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 327107993127271,
+					"parameters": {
+						"variable": "prevX",
+						"value": "Touch.X"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 182212049043880,
+					"parameters": {
+						"variable": "prevY",
+						"value": "Touch.Y"
+					}
+				}
+			],
+			"sid": 569989194060642
+		},
+		{
+			"eventType": "comment",
+			"text": "Move along the path"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-any-touch-end",
+					"objectClass": "Touch",
+					"sid": 687310304782903
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "butterfly",
+					"sid": 121066062707079,
+					"parameters": {
+						"x": "Line.X",
+						"y": "Line.Y"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 395328163185602,
+					"parameters": {
+						"variable": "move_end",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 211803708607532,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "for-each",
+							"objectClass": "System",
+							"sid": 682825547036770,
+							"parameters": {
+								"object": "Line"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-position",
+							"objectClass": "butterfly",
+							"sid": 628131220398171,
+							"behaviorType": "MoveTo",
+							"parameters": {
+								"x": "Line.X",
+								"y": "Line.Y",
+								"mode": "add-waypoint"
+							}
+						}
+					],
+					"sid": 829016895612227
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 833329639802199,
+							"parameters": {
+								"first-value": "Line.X",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 737953676505566,
+							"parameters": {
+								"first-value": "Line.Y",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "butterfly",
+							"sid": 510409698483928,
+							"parameters": {
+								"x": "805",
+								"y": "67"
+							}
+						}
+					],
+					"sid": 134751460811371
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Smoothly rotate the butterfly"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 962922421047087
+				}
+			],
+			"actions": [],
+			"sid": 941667581952660
+		},
+		{
+			"functionName": "win",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 327817730576255,
+					"parameters": {
+						"audio-file": "You did it",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 716551916022700,
+					"parameters": {
+						"variable": "sound_counter",
+						"value": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 627067266720831,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 440304672824696
+				}
+			],
+			"sid": 648433660577815
+		},
+		{
+			"functionName": "tryAgain",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 438517908442788,
+					"parameters": {
+						"audio-file": "oh no",
+						"loop": "not-looping",
+						"volume": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 141509774914220,
+					"parameters": {
+						"variable": "sound_counter",
+						"value": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 944172586689534,
+					"parameters": {
+						"seconds": "1"
+					}
+				},
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 611916486786042
+				}
+			],
+			"sid": 753587364642702
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 833813269204264,
+					"parameters": {
+						"first-value": "rand_no1",
+						"comparison": 0,
+						"second-value": "int(Text4.Text)"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 749698311395962,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "butterfly",
+							"sid": 296583265247289,
+							"parameters": {
+								"object": "Text1"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 198030950426109,
+							"parameters": {
+								"first-value": "sound_counter",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "win",
+							"sid": 211739784656506
+						}
+					],
+					"sid": 458324129235493
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "butterfly",
+							"sid": 485650101122848,
+							"parameters": {
+								"object": "Text2"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 376927060026275,
+							"parameters": {
+								"first-value": "sound_counter",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "tryAgain",
+							"sid": 498255692777367
+						}
+					],
+					"sid": 356604557291404
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "butterfly",
+							"sid": 728175431374949,
+							"parameters": {
+								"object": "Text3"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 406093986255966,
+							"parameters": {
+								"first-value": "sound_counter",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "tryAgain",
+							"sid": 894289997809717
+						}
+					],
+					"sid": 124109652418651
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 741238541726785
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 515539413343754,
+					"parameters": {
+						"first-value": "rand_no2",
+						"comparison": 0,
+						"second-value": "int(Text4.Text)"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 831840826779766,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "butterfly",
+							"sid": 103732582395520,
+							"parameters": {
+								"object": "Text2"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 553075883233456,
+							"parameters": {
+								"first-value": "sound_counter",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "win",
+							"sid": 546907858324592
+						}
+					],
+					"sid": 859205351894997
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "butterfly",
+							"sid": 994656444674999,
+							"parameters": {
+								"object": "Text1"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 338312042160098,
+							"parameters": {
+								"first-value": "sound_counter",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "tryAgain",
+							"sid": 130379238489500
+						}
+					],
+					"sid": 142586094081583
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "butterfly",
+							"sid": 361246325681329,
+							"parameters": {
+								"object": "Text3"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 292336577888434,
+							"parameters": {
+								"first-value": "sound_counter",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "tryAgain",
+							"sid": 362197118698536
+						}
+					],
+					"sid": 507046623176823
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 962566647501926,
+					"parameters": {
+						"first-value": "rand_no3",
+						"comparison": 0,
+						"second-value": "int(Text4.Text)"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 295386493539043,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "butterfly",
+							"sid": 480708288885711,
+							"parameters": {
+								"object": "Text3"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 966004701392146,
+							"parameters": {
+								"first-value": "sound_counter",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "win",
+							"sid": 485136522048383
+						}
+					],
+					"sid": 860518229097668
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "butterfly",
+							"sid": 487635522279250,
+							"parameters": {
+								"object": "Text2"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 720148894493837,
+							"parameters": {
+								"first-value": "sound_counter",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "tryAgain",
+							"sid": 492769049077887
+						}
+					],
+					"sid": 370596591512980
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "butterfly",
+							"sid": 408604375530097,
+							"parameters": {
+								"object": "Text1"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 978859424709922,
+							"parameters": {
+								"first-value": "sound_counter",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "tryAgain",
+							"sid": 919771746591191
+						}
+					],
+					"sid": 883133711938042
+				}
+			]
+		}
+	],
+	"sid": 894225669629940
+}
